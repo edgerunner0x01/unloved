@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Graveyard:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS for fade-out effect */
+        body.fade-out {
+            animation: fadeOut 1s forwards; /* Animation duration and final state */
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Welcome to Your Eternal Rest</h1>
+        <p class="subtitle">You’ve wandered through the realms of reality and now stand at the threshold of the unknown. <br> The shadows have long awaited your return, whispering secrets of a world beyond the veil of life. Here, amidst the echoes of forgotten souls and the eerie silence of the forsaken, you are about to confront the mysteries that defy mortal understanding. <br> Enter if you dare, for in this place, time itself crumbles and the darkness holds truths that will haunt you forever.</p>
+        <button class="start-button" onclick="fadeAndRedirect()">Embrace the Darkness</button>
+    </div>
+
+    <script>
+        function fadeAndRedirect() {
+            document.body.classList.add('fade-out'); // Trigger the fade-out animation
+            setTimeout(function() {
+                window.location.href = '../Chapters/TheAbyss/pilot.html'; // Redirect to the desired page
+            }, 1000); // Match the timeout duration with the animation duration
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+/* Importing Stylish and Horror Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Graveyard:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spooky+Tooth:wght@400;700&display=swap');
+
+/* General Styles */
+/* General Styles */
+body {
+    font-family: 'Playfair Display', serif; /* Main font */
+    background: url('../Images/340290.jpg') no-repeat center center fixed;
+    background-size: cover; /* Cover the entire viewport */
+    color: #e0e0e0; /* Slightly lighter color for better readability */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative; /* Needed for pseudo-element positioning */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in transition */
+}
+
+/* Ensure body is visible after page load */
+body.loaded {
+    opacity: 1;
+}
+
+/* Adding a blurred overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Darker overlay for a more intense effect */
+    filter: blur(5px); /* Slightly reduced blur for more clarity */
+    z-index: 0; /* Ensure it is below the container */
+}
+
+.container {
+    max-width: 80%; /* Slightly reduced width for a more contained look */
+    width: 700px; /* Reduced width for better fit */
+    padding: 20px; /* Reduced padding for a tighter appearance */
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.85); /* Darker background for more horror effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Slightly reduced shadow for a subtle effect */
+    box-sizing: border-box;
+    position: relative; /* To ensure container is above the pseudo-element */
+    z-index: 1; /* Ensure container is above the background */
+}
+
+/* Title Styling */
+h1 {
+    font-family: 'Graveyard', cursive; /* Horror font */
+    font-size: 2.5em; /* Reduced size for a more compact look */
+    margin: 0 0 15px 0;
+    color: #f0f0f0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 255, 255, 0.6), 
+                 0 0 30px rgba(255, 255, 255, 0.4); /* Slightly softer shadow */
+}
+
+/* Paragraph Styling */
+p {
+    font-family: 'Spooky Tooth', cursive; /* Slightly different horror font for paragraphs */
+    font-size: 1.2em; /* Slightly smaller font size for a tighter appearance */
+    line-height: 1.6; /* Slightly reduced line height for a more compact look */
+    margin: 0 0 20px 0;
+    color: #e0e0e0;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.7), 
+                 0 0 12px rgba(200, 200, 200, 0.5); /* Subtle glow */
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Reduced gap between buttons */
+    flex-wrap: wrap;
+    margin-top: 15px; /* Reduced margin for spacing */
+}
+
+.button {
+    background-color: #222; /* Dark gray for a scary look */
+    color: #e0e0e0;
+    border: 2px solid #333; /* Darker border */
+    padding: 15px 30px; /* Reduced padding for smaller buttons */
+    font-size: 1em; /* Slightly smaller font size for better fit */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Subtle shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Smooth transition effects */
+    text-decoration: none; /* Remove underline from <a> tags */
+    display: inline-block; /* Ensures button style is applied to <a> */
+    font-family: 'Playfair Display', serif; /* Match button text to main font */
+}
+
+.button:hover {
+    background-color: #333; /* Dark gray on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1); /* Enhanced shadow on hover */
+    transform: scale(1.05); /* Slightly enlarges button on hover for a 'creepy' effect */
+    color: #fff; /* Change text color on hover */
+}
+
+.button:active {
+    background-color: #000; /* Darker background when button is pressed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Slightly reduced shadow when pressed */
+    transform: scale(0.95); /* Slightly shrink button on press for a tactile effect */
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px; /* Adjusted padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjusted size for smaller screens */
+    }
+
+    p {
+        font-size: 1.1em; /* Adjusted size for smaller screens */
+    }
+
+    .button {
+        padding: 12px 25px; /* Adjusted padding for smaller screens */
+        font-size: 0.9em; /* Adjusted size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em; /* Adjusted size for smaller screens */
+    }
+
+    p {
+        font-size: 1em; /* Adjusted size for smaller screens */
+    }
+
+    .button {
+        padding: 10px 20px; /* Adjusted padding for smaller screens */
+        font-size: 0.8em; /* Adjusted size for smaller screens */
+    }
+}
