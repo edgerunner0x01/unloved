@@ -1,4 +1,4 @@
 # unloved
 unloved for life
-![Logo][logo.png]
+![Logo](logo.png)
 ![Application Screenshot](screenshot.png)
